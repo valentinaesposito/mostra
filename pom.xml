@@ -14,8 +14,27 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.3</version>
+    </dependency>
   </dependencies>
   <build>
+      <plugins>
+          <plugin>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <configuration>
+                  <scanIntervalSeconds>1</scanIntervalSeconds>
+              </configuration>
+          </plugin>
+      </plugins>
     <finalName>mostra</finalName>
   </build>
 </project>

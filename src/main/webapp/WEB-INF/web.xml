@@ -2,6 +2,46 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app metadata-complete="true">
   <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>Artistiresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Artistiresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Artistiresource</servlet-name>
+        <url-pattern>/artisti/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Curatoreresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Curatoreresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Curatoreresource</servlet-name>
+        <url-pattern>/curatore/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Galleriaresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Galleriaresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Galleriaresource</servlet-name>
+        <url-pattern>/galleria/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Opereresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Opereresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Opereresource</servlet-name>
+        <url-pattern>/opere/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Profiloresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Profiloresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Profiloresource</servlet-name>
+        <url-pattern>/profilo/*</url-pattern>
+    </servlet-mapping>
 </web-app>

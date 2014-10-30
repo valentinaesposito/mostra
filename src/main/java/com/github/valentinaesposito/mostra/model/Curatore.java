@@ -10,14 +10,6 @@ public class Curatore {
     private String password;
     Profilo profilo;
 
-    public Profilo getProfilo() {
-        return profilo;
-    }
-
-    public void setProfilo(Profilo profilo) {
-        this.profilo = profilo;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -33,6 +25,14 @@ public class Curatore {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Profilo getProfilo() {
+        return profilo;
+    }
+
+    public void setProfilo(Profilo profilo) {
+        this.profilo = profilo;
     }
 
 }

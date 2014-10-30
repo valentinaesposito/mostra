@@ -6,9 +6,8 @@ package com.github.valentinaesposito.mostra.model;
 public class Opere {
 
     private String titolo;
-    private String nomeG; // nome galleria d'esposizione
-    private String nomeA;
     private Artisti artista;
+    private Galleria gallery;
 
     public String getTitolo() {
         return titolo;
@@ -18,28 +17,20 @@ public class Opere {
         this.titolo = titolo;
     }
 
-    public String getNomeG() {
-        return nomeG;
-    }
-
-    public void setNomeG(String nomeG) {
-        this.nomeG = nomeG;
-    }
-
-    public String getNomeA() {
-        return nomeA;
-    }
-
-    public void setNomeA(String nomeA) {
-        this.nomeA = nomeA;
-    }
-
     public Artisti getArtista() {
         return artista;
     }
 
     public void setArtista(Artisti artista) {
         this.artista = artista;
+    }
+
+    public Galleria getGallery() {
+        return gallery;
+    }
+
+    public void setGallery(Galleria gallery) {
+        this.gallery = gallery;
     }
 
 }

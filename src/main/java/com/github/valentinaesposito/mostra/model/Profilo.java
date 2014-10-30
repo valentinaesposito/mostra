@@ -10,14 +10,6 @@ public class Profilo {
     private String mail;
     Curatore curatore;
 
-    public Curatore getCuratore() {
-        return curatore;
-    }
-
-    public void setCuratore(Curatore curatore) {
-        this.curatore = curatore;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -40,6 +32,14 @@ public class Profilo {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public Curatore getCuratore() {
+        return curatore;
+    }
+
+    public void setCuratore(Curatore curatore) {
+        this.curatore = curatore;
     }
 
 }

@@ -9,14 +9,6 @@ public class Artisti {
     private String nazionalita;
     private String correnteArtistica;
 
-    public String getCorrenteArtistica() {
-        return correnteArtistica;
-    }
-
-    public void setCorrenteArtistica(String correnteArtistica) {
-        this.correnteArtistica = correnteArtistica;
-    }
-
     public String getNomeA() {
         return nomeA;
     }
@@ -31,6 +23,14 @@ public class Artisti {
 
     public void setNazionalita(String nazionalita) {
         this.nazionalita = nazionalita;
+    }
+
+    public String getCorrenteArtistica() {
+        return correnteArtistica;
+    }
+
+    public void setCorrenteArtistica(String correnteArtistica) {
+        this.correnteArtistica = correnteArtistica;
     }
 
 }

@@ -6,7 +6,7 @@ package com.github.valentinaesposito.mostra.model;
 public class Galleria {
 
     private String galleria;
-    private String Citta;
+    private String city;
 
     public String getGalleria() {
         return galleria;
@@ -16,12 +16,12 @@ public class Galleria {
         this.galleria = galleria;
     }
 
-    public String getCitta() {
-        return Citta;
+    public String getCity() {
+        return city;
     }
 
-    public void setCitta(String citta) {
-        Citta = citta;
+    public void setCity(String city) {
+        this.city = city;
     }
 
 }

@@ -1,14 +1,25 @@
 package com.github.valentinaesposito.mostra.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Peppe on 27/10/2014.
  */
-public class Profilo {
+public class Profilo extends JsonObject{
 
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(nullable=false)
     private String nome;
+    @Column(nullable=false)
     private String cognome;
+    @Column(nullable=false)
     private String mail;
-    Curatore curatore;
+    @OneToOne
+    @JoinColumn(nullable=false)
+    private Curatore curatore;
+
 
     public String getNome() {
         return nome;

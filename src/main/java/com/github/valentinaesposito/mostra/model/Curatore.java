@@ -1,14 +1,44 @@
 package com.github.valentinaesposito.mostra.model;
 
+import javax.persistence.*;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Set;
+
 /**
  * Created by Peppe on 27/10/2014.
  */
-public class Curatore {
+public class Curatore extends JsonObject{
 
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(nullable=false)
+    private Long id;
+    @Column(nullable=false)
     private String username;
+    @Column(nullable=false)
     private String password;
-    Profilo profilo;
+    @OneToOne
+    @JoinColumn(nullable=false)
+    private Profilo profilo;
+    @ManyToMany(mappedBy="curatore")
+    private Set<Galleria> galleria;
+
+
+
+    public Curatore() {}
+
+    public Curatore(HttpServletRequest request) throws Exception {
+        this.username = this.validate(String.class, request.getParameter("username"));
+        this.password = this.validate(String.class, request.getParameter("password"));
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -34,6 +64,15 @@ public class Curatore {
     public void setProfilo(Profilo profilo) {
         this.profilo = profilo;
     }
+
+
+    /*public Set<Galleria> getGalleria() {
+        return galleria;
+    }
+
+    public void setGalleria(Set<Galleria> galleria) {
+        this.galleria = galleria;
+    }*/
 
 }
 

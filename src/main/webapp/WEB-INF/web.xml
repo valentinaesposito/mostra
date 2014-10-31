@@ -5,6 +5,14 @@
 <web-app metadata-complete="true">
   <display-name>Archetype Created Web Application</display-name>
     <servlet>
+        <servlet-name>Artistaresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Artistaresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Artistaresource</servlet-name>
+        <url-pattern>/artista/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Artistiresource</servlet-name>
         <servlet-class>com.github.valentinaesposito.mostra.Artistiresource</servlet-class>
     </servlet>
@@ -13,12 +21,20 @@
         <url-pattern>/artisti/*</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Curatoreresource</servlet-name>
-        <servlet-class>com.github.valentinaesposito.mostra.Curatoreresource</servlet-class>
-    </servlet>
+    <servlet-name>Curatoreresource</servlet-name>
+    <servlet-class>com.github.valentinaesposito.mostra.Curatoreresource</servlet-class>
+</servlet>
     <servlet-mapping>
         <servlet-name>Curatoreresource</servlet-name>
         <url-pattern>/curatore/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Curatoriresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Curatoriresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Curatoriresource</servlet-name>
+        <url-pattern>/curatori/*</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>Galleriaresource</servlet-name>
@@ -27,6 +43,22 @@
     <servlet-mapping>
         <servlet-name>Galleriaresource</servlet-name>
         <url-pattern>/galleria/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Gallerieresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Gallerieresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Gallerieresource</servlet-name>
+        <url-pattern>/gallerie/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Opererasource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Operaresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Operaresource</servlet-name>
+        <url-pattern>/opera/*</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>Opereresource</servlet-name>
@@ -44,4 +76,31 @@
         <servlet-name>Profiloresource</servlet-name>
         <url-pattern>/profilo/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Profiliresource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Profiliresource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Profiliresource</servlet-name>
+        <url-pattern>/profili/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.Controller</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controller/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>TokenResource</servlet-name>
+        <servlet-class>com.github.valentinaesposito.mostra.TokenResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TokenResource</servlet-name>
+        <url-pattern>/token/*</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>com.github.helloiampau.biblio.util.DBHandler</listener-class>
+    </listener>
 </web-app>

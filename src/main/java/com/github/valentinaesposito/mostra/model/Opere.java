@@ -1,12 +1,21 @@
 package com.github.valentinaesposito.mostra.model;
 
+import javax.persistence.*;
+import java.util.Set;
+
 /**
  * Created by Peppe on 27/10/2014.
  */
-public class Opere {
+public class Opere extends JsonObject {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(nullable=false)
     private String titolo;
+    @Column(nullable=false)
     private Artisti artista;
+    @OneToOne
+    @JoinColumn(nullable=false)
     private Galleria gallery;
 
     public String getTitolo() {

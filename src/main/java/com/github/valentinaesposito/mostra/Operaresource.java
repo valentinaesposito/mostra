@@ -1,7 +1,7 @@
 package com.github.valentinaesposito.mostra;
 
 import com.github.valentinaesposito.mostra.exception.FieldValidationException;
-import com.github.valentinaesposito.mostra.model.Curatore;
+import com.github.valentinaesposito.mostra.model.Opere;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,20 +9,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by Peppe on 27/10/2014.
+ * Created by Peppe on 31/10/2014.
  */
-public class Curatoreresource extends Controller {
+public class Operaresource extends Controller {
 
     @Override
     // Tale metodo serve per fare richieste al DB
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            Curatore curatore = Curatore.validate(Curatore.class, request.getParameter("id"));
-            if(curatore == null)
+            Opere opera = Opere.validate(Opere.class, request.getParameter("id"));
+            if(opera == null)
                 throw new FieldValidationException();
 
             PrintWriter writer = response.getWriter();
-            writer.println(curatore.toJson());
+            writer.println(opera.toJson());
         } catch (FieldValidationException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -34,12 +34,12 @@ public class Curatoreresource extends Controller {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
             String json = this.readBody(request.getReader());
-            Curatore curatore = Curatore.fromJson(Curatore.class, json);
-            System.out.println(curatore.toJson());
-            curatore.save();
+            Opere opera = Opere.fromJson(Opere.class, json);
+            System.out.println(opera.toJson());
+            opera.save();
 
             PrintWriter writer = response.getWriter();
-            writer.println(curatore.toJson());
+            writer.println(opera.toJson());
         } catch(FieldValidationException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -51,11 +51,11 @@ public class Curatoreresource extends Controller {
     public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
             String json = this.readBody(request.getReader());
-            Curatore curatore = Curatore.fromJson(Curatore.class, json);
-            curatore.update();
+            Opere opera = Opere.fromJson(Opere.class, json);
+            opera.update();
 
             PrintWriter writer = response.getWriter();
-            writer.println(curatore.toJson());
+            writer.println(opera.toJson());
         } catch(FieldValidationException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -66,8 +66,8 @@ public class Curatoreresource extends Controller {
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Curatore curatore = Curatore.validate(Curatore.class, request.getParameter("id"));
-            curatore.delete();
+            Opere opera = Opere.validate(Opere.class, request.getParameter("id"));
+            opera.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

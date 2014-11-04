@@ -18,10 +18,14 @@ public class Esposizione extends Controller {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             Curatore curator= Curatore.validate(Curatore.class,request.getParameter("idC"));
-            if(curator == null)
-                throw new FieldValidationException();
-            //curator.getGalleria().add(Galleria );
+            Galleria g= Galleria.validate(Galleria.class,request.getParameter("idG"));
+           /* if(curator == null)
+                throw new FieldValidationException();*/
+            curator.getGalleria().add(g);
             curator.update();
+            PrintWriter writer = response.getWriter();
+            writer.println(curator.toJson());
+            response.setStatus(HttpServletResponse.SC_OK);
         } catch(FieldValidationException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

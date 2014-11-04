@@ -17,9 +17,9 @@ public class Galleria extends JsonObject{
     private String galleria;
     @Column(nullable=false)
     private String city;
-    @OneToMany(mappedBy="galleria")
+    @OneToMany(mappedBy="gallery",fetch=FetchType.EAGER)
     private Set<Opere> opere;
-    @ManyToMany(mappedBy="galleria")
+    @ManyToMany(mappedBy="galleria",fetch=FetchType.EAGER)
     private Set<Curatore> curatore;
 
 

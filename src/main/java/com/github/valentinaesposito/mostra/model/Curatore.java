@@ -19,9 +19,8 @@ public class Curatore extends JsonObject{
     @Column(nullable=false)
     private String password;
     @OneToOne
-    @JoinColumn(nullable=false)
     private Profilo profilo;
-    @ManyToMany(mappedBy="curatore")
+    @ManyToMany(fetch=FetchType.EAGER)
     private Set<Galleria> galleria;
 
 

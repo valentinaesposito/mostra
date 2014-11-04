@@ -50,7 +50,7 @@ public class Curatoreresource extends Controller {
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Curatore curatore = Curatore.validate(Curatore.class, request.getParameter("id"));
+            Curatore curatore = Curatore.validate(Curatore.class, request.getParameter("idC"));
             curatore.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();

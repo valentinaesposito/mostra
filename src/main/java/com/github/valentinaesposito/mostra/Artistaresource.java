@@ -17,7 +17,7 @@ public class Artistaresource extends Controller {
     // Tale metodo serve per fare richieste al DB
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Artisti artista = Artisti.validate(Artisti.class, request.getParameter("id"));
+            Artisti artista = Artisti.validate(Artisti.class, request.getParameter("idA"));
             if(artista == null)
                 throw new FieldValidationException();
 
@@ -66,7 +66,7 @@ public class Artistaresource extends Controller {
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Artisti artista = Artisti.validate(Artisti.class, request.getParameter("id"));
+            Artisti artista = Artisti.validate(Artisti.class, request.getParameter("idA"));
             artista.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();

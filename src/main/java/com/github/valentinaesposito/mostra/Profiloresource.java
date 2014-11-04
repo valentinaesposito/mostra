@@ -17,7 +17,7 @@ public class Profiloresource  extends Controller{
     // Tale metodo serve per fare richieste al DB
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            Profilo profilo = Profilo.validate(Profilo.class, request.getParameter("id"));
+            Profilo profilo = Profilo.validate(Profilo.class, request.getParameter("idP"));
             if(profilo == null)
                 throw new FieldValidationException();
 
@@ -66,7 +66,7 @@ public class Profiloresource  extends Controller{
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Profilo profilo = Profilo.validate(Profilo.class, request.getParameter("id"));
+            Profilo profilo = Profilo.validate(Profilo.class, request.getParameter("idP"));
             profilo.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();

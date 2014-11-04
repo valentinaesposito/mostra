@@ -17,7 +17,7 @@ public class Operaresource extends Controller {
     // Tale metodo serve per fare richieste al DB
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            Opere opera = Opere.validate(Opere.class, request.getParameter("id"));
+            Opere opera = Opere.validate(Opere.class, request.getParameter("idO"));
             if(opera == null)
                 throw new FieldValidationException();
 
@@ -66,7 +66,7 @@ public class Operaresource extends Controller {
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Opere opera = Opere.validate(Opere.class, request.getParameter("id"));
+            Opere opera = Opere.validate(Opere.class, request.getParameter("idO"));
             opera.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class Profilo extends JsonObject{
     private String cognome;
     @Column(nullable=false)
     private String mail;
-    @OneToOne
+    @OneToOne(fetch=FetchType.EAGER)
     @JoinColumn(nullable=false)
     private Curatore curatore;
 

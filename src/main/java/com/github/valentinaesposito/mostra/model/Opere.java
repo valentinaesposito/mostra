@@ -15,10 +15,10 @@ public class Opere extends JsonObject {
     private Long idO;
     @Column(nullable=false)
     private String titolo;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(nullable=false)
     private Artisti artista;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(nullable=false)
     private Galleria gallery;
 

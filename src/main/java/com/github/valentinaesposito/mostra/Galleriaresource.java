@@ -17,7 +17,7 @@ public class Galleriaresource extends Controller {
     // Tale metodo serve per fare richieste al DB
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Galleria galleria = Galleria.validate(Galleria.class, request.getParameter("id"));
+            Galleria galleria = Galleria.validate(Galleria.class, request.getParameter("idG"));
             if(galleria == null)
                 throw new FieldValidationException();
 
@@ -66,7 +66,7 @@ public class Galleriaresource extends Controller {
     // Tale metodo serve per eliminare un elemento nel DB
     public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {
-            Galleria galleria = Galleria.validate(Galleria.class, request.getParameter("id"));
+            Galleria galleria = Galleria.validate(Galleria.class, request.getParameter("idG"));
             galleria.delete();
         } catch (FieldValidationException e) {
             e.printStackTrace();

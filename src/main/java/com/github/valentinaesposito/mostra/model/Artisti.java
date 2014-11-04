@@ -19,7 +19,7 @@ public class Artisti extends JsonObject{
     private String nazionalita;
     @Column(nullable=false)
     private String correnteArtistica;
-    @OneToMany(mappedBy="artisti")
+    @OneToMany(mappedBy="artista",fetch=FetchType.EAGER)
     private Set<Opere> opere;
 
     public Long getIdA() {

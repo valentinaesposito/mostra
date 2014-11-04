@@ -19,8 +19,8 @@ public class Esposizione extends Controller {
         try {
             Curatore curator= Curatore.validate(Curatore.class,request.getParameter("idC"));
             Galleria g= Galleria.validate(Galleria.class,request.getParameter("idG"));
-           /* if(curator == null)
-                throw new FieldValidationException();*/
+            if(curator == null)
+                throw new FieldValidationException();
             curator.getGalleria().add(g);
             curator.update();
             PrintWriter writer = response.getWriter();

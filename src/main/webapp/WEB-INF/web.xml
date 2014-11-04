@@ -53,7 +53,7 @@
         <url-pattern>/gallerie/*</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Opererasource</servlet-name>
+        <servlet-name>Operasource</servlet-name>
         <servlet-class>com.github.valentinaesposito.mostra.Operaresource</servlet-class>
     </servlet>
     <servlet-mapping>

@@ -6,12 +6,13 @@ import java.util.Set;
 /**
  * Created by Peppe on 29/10/2014.
  */
+@Entity
 public class Galleria extends JsonObject{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(nullable=false)
-    private Long id;
+    private Long idG;
     @Column(nullable=false)
     private String galleria;
     @Column(nullable=false)
@@ -22,12 +23,12 @@ public class Galleria extends JsonObject{
     private Set<Curatore> curatore;
 
 
-    public Long getId() {
-        return id;
+    public Long getIdG() {
+        return idG;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdG(Long idG) {
+        this.idG = idG;
     }
 
     public String getGalleria() {
@@ -46,8 +47,7 @@ public class Galleria extends JsonObject{
         this.city = city;
     }
 
-
-   /* public Set<Opere> getOpere() {
+    public Set<Opere> getOpere() {
         return opere;
     }
 
@@ -61,6 +61,6 @@ public class Galleria extends JsonObject{
 
     public void setCuratore(Set<Curatore> curatore) {
         this.curatore = curatore;
-    }*/
+    }
 
 }

@@ -29,14 +29,6 @@
         <url-pattern>/curatore/*</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Curatoriresource</servlet-name>
-        <servlet-class>com.github.valentinaesposito.mostra.Curatoriresource</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Curatoriresource</servlet-name>
-        <url-pattern>/curatori/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>Galleriaresource</servlet-name>
         <servlet-class>com.github.valentinaesposito.mostra.Galleriaresource</servlet-class>
     </servlet>

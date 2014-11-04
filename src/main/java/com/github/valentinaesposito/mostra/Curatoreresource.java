@@ -14,22 +14,6 @@ import java.io.PrintWriter;
 public class Curatoreresource extends Controller {
 
     @Override
-    // Tale metodo serve per fare richieste al DB
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        try {
-            Curatore curatore = Curatore.validate(Curatore.class, request.getParameter("id"));
-            if(curatore == null)
-                throw new FieldValidationException();
-
-            PrintWriter writer = response.getWriter();
-            writer.println(curatore.toJson());
-        } catch (FieldValidationException e) {
-            e.printStackTrace();
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        }
-    }
-
-    @Override
     // Tale metodo serve per fare inserimenti nel DB
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         try {

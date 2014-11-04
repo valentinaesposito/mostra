@@ -6,12 +6,13 @@ import java.util.Set;
 /**
  * Created by Peppe on 27/10/2014.
  */
+@Entity
 public class Artisti extends JsonObject{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(nullable=false)
-    private Long id;
+    private Long idA;
     @Column(nullable=false)
     private String nomeA;
     @Column(nullable=false)
@@ -21,12 +22,12 @@ public class Artisti extends JsonObject{
     @OneToMany(mappedBy="artisti")
     private Set<Opere> opere;
 
-    public Long getId() {
-        return id;
+    public Long getIdA() {
+        return idA;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdA(Long idA) {
+        this.idA = idA;
     }
 
     public String getNomeA() {
@@ -58,12 +59,12 @@ public class Artisti extends JsonObject{
     }
 
 
-   /*public Set<Opere> getOpere() {
+   public Set<Opere> getOpere() {
         return opere;
     }
 
     public void setOpere(Set<Opere> opere) {
         this.opere = opere;
-    }*/
+    }
 
 }

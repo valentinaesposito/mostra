@@ -31,8 +31,8 @@ public class DBHandler implements ServletContextListener {
                 .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect")
                 .addAnnotatedClass(Artisti.class)
                 .addAnnotatedClass(Curatore.class)
-                .addAnnotatedClass(Galleria.class)
                 .addAnnotatedClass(Opere.class)
+                .addAnnotatedClass(Galleria.class)
                 .addAnnotatedClass(Profilo.class);
 
         if(Properties.get(Properties.TEST_ENV) != null)

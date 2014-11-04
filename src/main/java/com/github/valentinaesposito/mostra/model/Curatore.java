@@ -7,12 +7,13 @@ import java.util.Set;
 /**
  * Created by Peppe on 27/10/2014.
  */
+@Entity
 public class Curatore extends JsonObject{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(nullable=false)
-    private Long id;
+    private Long idC;
     @Column(nullable=false)
     private String username;
     @Column(nullable=false)
@@ -32,12 +33,12 @@ public class Curatore extends JsonObject{
         this.password = this.validate(String.class, request.getParameter("password"));
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdC() {
+        return idC;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdC(Long idC) {
+        this.idC = idC;
     }
 
     public String getUsername() {
@@ -66,13 +67,13 @@ public class Curatore extends JsonObject{
     }
 
 
-    /*public Set<Galleria> getGalleria() {
+    public Set<Galleria> getGalleria() {
         return galleria;
     }
 
     public void setGalleria(Set<Galleria> galleria) {
         this.galleria = galleria;
-    }*/
+    }
 
 }
 
